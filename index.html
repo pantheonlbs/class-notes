@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Índice: 20 entradas</title>
+        <style>
+            body {
+                width: 100%;
+                max-width: 320px;
+                margin: 10px auto;
+                font-family: sans-serif;
+
+                transform: translateX(20px);
+                opacity: 0;
+                transition: transform 0.3s, opacity 0.3s;
+
+                --bg-color: #ffffff;
+                --text-color: #262626;
+                --link-hover-color: #262664;
+
+                background-color: var(--bg-color);
+                color: var(--text-color);
+            }          
+
+            body.loaded { transform: translateX(0px); opacity: 1; }
+
+            ul {
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+            li {
+                margin-top: 0.4em;
+            }
+
+            a {
+                color: var(--text-color);
+                text-decoration: none;
+            }
+
+            a:hover {
+                color: var(--link-hover-color);
+                padding-left: 4px;
+            }
+
+            a:before { content: "📄 " }
+            a:hover:before { content: "📝 " }
+            a.folder:before { content: "📁 " }
+            a.folder:hover:before { content: "📂 " }
+            a.back:before { content: "🔙 " }
+
+            li:only-child::after {
+                content: "nenhum arquivo";
+                display: block;
+                text-align: center;
+                color: gray;
+                font-size: 0.8em;
+                margin: 2em;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Índice</h1>
+        <ul>
+            <!--<li><a class="back" href="#">Voltar</a></li>-->
+            <li><a class="folder" href="Atualidades (Xandão)/index.html">Atualidades (Xandão)</a></li>
+            <li><a class="folder" href="Biologia (Alessandro)/index.html">Biologia (Alessandro)</a></li>
+            <li><a class="folder" href="Biologia (Éder)/index.html">Biologia (Éder)</a></li>
+            <li><a class="folder" href="Filosofia (Rodrigo)/index.html">Filosofia (Rodrigo)</a></li>
+            <li><a class="folder" href="Física (Elis)/index.html">Física (Elis)</a></li>
+            <li><a class="folder" href="Física (Marcão)/index.html">Física (Marcão)</a></li>
+            <li><a class="folder" href="Física (Rafael)/index.html">Física (Rafael)</a></li>
+            <li><a class="folder" href="Geografia (Garcia)/index.html">Geografia (Garcia)</a></li>
+            <li><a class="folder" href="Geografia (Xandão)/index.html">Geografia (Xandão)</a></li>
+            <li><a class="folder" href="Gramática (Nilo)/index.html">Gramática (Nilo)</a></li>
+            <li><a class="folder" href="História (Sella)/index.html">História (Sella)</a></li>
+            <li><a class="folder" href="História (Thiago)/index.html">História (Thiago)</a></li>
+            <li><a class="folder" href="Literatura (Jerri)/index.html">Literatura (Jerri)</a></li>
+            <li><a class="folder" href="Matemática (Henrique)/index.html">Matemática (Henrique)</a></li>
+            <li><a class="folder" href="Matemática (Rafael)/index.html">Matemática (Rafael)</a></li>
+            <li><a class="folder" href="Química (Garcia)/index.html">Química (Garcia)</a></li>
+            <li><a class="folder" href="Química (Josnei)/index.html">Química (Josnei)</a></li>
+            <li><a class="folder" href="Química (Wadilson)/index.html">Química (Wadilson)</a></li>
+            <li><a class="folder" href="Redação (Patrícia)/index.html">Redação (Patrícia)</a></li>
+            <li><a class="folder" href="Sociologia (Thiago)/index.html">Sociologia (Thiago)</a></li>
+        </ul>
+
+        <hr>
+
+        <p>© 2021 Lucas Bortoli</p>
+
+        <script>
+            (() => {
+                setTimeout(() => document.body.classList.add('loaded'), 10)
+                Array.from(document.querySelectorAll('li')).forEach(li => li.addEventListener('click', () => {
+                    document.body.classList.remove('loaded')
+                }))
+                /*document.querySelector('.back').addEventListener('click', () => {
+                    document.body.classList.remove('loaded')
+                    setTimeout(() => history.go(-2), 200)
+                })*/
+            })()
+
+            window.onunload = () => { /* ... */ }
+        </script>
+    </body>
+</html>
