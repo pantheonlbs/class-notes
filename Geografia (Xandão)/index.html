@@ -1201,6 +1201,7 @@ footer {
 		a.classList.add('nav-link', 'depth-' + h.tagName.charAt(1))
 		a.onclick = () => {
 			h.scrollIntoView({ behavior: 'smooth', block: 'start' })
+			document.title = h.innerText
 		}
 		navbox.appendChild(a)
 	})
@@ -1213,4 +1214,6 @@ footer {
 	if (Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) > 1400) {
 		navboxbtn.click()
 	}
+
+	document.title = document.querySelectorAll('h1,h2')[document.querySelectorAll('h1,h2').length - 1].innerText
 </script>
