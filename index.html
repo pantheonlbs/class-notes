@@ -37,6 +37,9 @@
             a {
                 color: var(--text-color);
                 text-decoration: none;
+                display: inline-block;
+                width: 100%;
+                padding: 4px 4px;
             }
 
             a:hover {
@@ -57,6 +60,17 @@
                 color: gray;
                 font-size: 0.8em;
                 margin: 2em;
+            }
+
+            li {
+                background: transparent;
+                transition: background 0.05s linear;
+                margin: 0;
+                padding: 0;
+            }
+
+            li:hover {
+                background: #eee;
             }
         </style>
     </head>
@@ -93,7 +107,7 @@
         <script>
             (() => {
                 setTimeout(() => document.body.classList.add('loaded'), 10)
-                Array.from(document.querySelectorAll('li')).forEach(li => li.addEventListener('click', () => {
+                Array.from(document.querySelectorAll('a')).forEach(li => li.addEventListener('click', () => {
                     document.body.classList.remove('loaded')
                 }))
                 /*document.querySelector('.back').addEventListener('click', () => {
