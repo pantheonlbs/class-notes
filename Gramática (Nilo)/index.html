@@ -181,8 +181,7 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
      font-weight: 400;
      src: local('Source Code Pro'), local('SourceCodePro-Regular'),
      url('file:////home/user/.config/Typora/themes/gitbook/SourceCodePro-Regular.ttf') format('truetype');
-}
-@import '';
+}@import '';
 
 /*by 16soundsofsilence, yes this code is an absolute mess*/
 
@@ -190,20 +189,20 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
   --bg-color: white;
   --side-bar-bg-color: #f5f7f9;
   --control-text-color: #3b454e;
-  --primary-color: #15ac8e;
-  --primary-btn-border-color: #15ac8e;
+  --primary-color: #3884ff;
+  --primary-btn-border-color: #3884ff;
   --active-file-bg-color: #e6ecf1;
   --active-file-text-color: inherit;
-  --active-file-border-color: #15ac8e;
+  --active-file-border-color: #3884ff;
   --item-hover-text-color: #242a31;
   --item-hover-bg-color: #f5f7f9;
   --window-border: 1px solid #e6ecf1;
   --select-text-font-color: white;
-  --select-text-bg-color: #11977d;
+  --select-text-bg-color: #1968e6;
 
   --md-char-color: #9daab6;
   --heading-char-color: #9daab6;
-  --meta-content-color: #15ac8e;
+  --meta-content-color: #3884ff;
 
   --borders: #e6ecf1;
   --table-border-color: #e6ecf1;
@@ -221,10 +220,10 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
   --codeboxes-lighter: #1c375f;
   --rawblock-edit-panel-bd: transparent;
 
-  --primary-color-darkest: #083d33;
-  --primary-color-darker2: #0d5748;
-  --primary-color-darker: #11977d;
-  --focus-ring-color: #15ac8e;
+  --primary-color-darkest: #001f50;
+  --primary-color-darker2: #00307c;
+  --primary-color-darker: #1968e6;
+  --focus-ring-color: #3884ff;
 
   --danger-color: rgb(255, 70, 66);
 
@@ -246,6 +245,10 @@ html,
 .form-control,
 .modal {
   font-size: 16px;
+}
+
+kbd {
+  font-family: var(--font-family);
 }
 
 body {
@@ -290,7 +293,6 @@ mark a, mark .md-content.md-url {
 mark a:hover {
   color: var(--primary-color-darkest);
 }
-
 
 .ty-preferences a {
   color: var(--primary-color);
@@ -550,6 +552,7 @@ table tr {
 table tr.md-end-block {
   border-top: none;
 }
+
 
 table tbody tr:last-child {
   border-bottom: none;
@@ -858,7 +861,7 @@ table tr td:last-child {
 .md-fences,
 tt {
   border-radius: 0.3rem;
-  color: #ffffff;
+  color: white;
   padding: 1.5rem;
   font-size: 0.8rem;
 }
@@ -872,7 +875,7 @@ code {
   -webkit-box-decoration-break: clone;
 }
 
-.md-fences .CodeMirror div.CodeMirror-cursor,
+.md-fences div.CodeMirror-cursor,
 #typora-source div.CodeMirror-cursor {
   border-left: solid 1px white;
 }
@@ -1133,7 +1136,7 @@ input[type='checkbox']:checked:after {
   color: #156db6;
 }
 
-.md-mathblock-input span.cm-bracket {
+.md-rawblock-input span.cm-bracket {
   color: var(--light-text-color);
 }
 
@@ -1185,14 +1188,14 @@ footer.ty-footer {
   opacity: 1;
 }
 
-.sidebar-tab {
-  font-weight: 500;
-  color: var(--light-text-color);
-}
-
 .info-panel-tab-border {
   color: var(--primary-color);
   border-radius: 2px;
+}
+
+.sidebar-tab {
+  font-weight: 500;
+  color: var(--light-text-color);
 }
 
 #ty-sidebar-search-back-btn {
@@ -1377,16 +1380,6 @@ footer.ty-footer {
   opacity: 0.9;
 }
 
-#typora-sidebar input.file-list-item-file-name {
-  margin: 0.5rem 0rem 0.5rem 0.7rem;
-  padding: 0.4rem !important;
-  line-height: 1rem;
-  float: right;
-  border-radius: 0.3rem;
-  font-weight: 500;
-  background-color: white !important;
-}
-
 #typora-sidebar .file-list-item-count {
   font-size: 0.75rem;
   background-color: var(--primary-color);
@@ -1398,6 +1391,16 @@ footer.ty-footer {
   line-height: 1.25rem;
   position: relative;
   top: 0.3rem;
+}
+
+#typora-sidebar input.file-list-item-file-name {
+  margin: 0.5rem 0rem 0.5rem 0.7rem;
+  padding: 0.4rem !important;
+  line-height: 1rem;
+  float: right;
+  border-radius: 0.3rem;
+  font-weight: 500;
+  background-color: white !important;
 }
 
 #typora-sidebar .file-list-item.file-library-file-node {
@@ -2397,7 +2400,7 @@ select:hover {
   background-color: var(--primary-color);
   border: 1px solid transparent;
   color: white !important /*important required*/;
-  box-shadow: rgba(116, 129, 141, 0.1) 2px 2px 6px, rgba(26, 168, 139, 0.2) 0px 0px 10px;
+  box-shadow: rgba(116, 129, 141, 0.1) 2px 2px 6px, rgba(56, 132, 255, 0.2) 0px 0px 10px;
 }
 
 #m-import-local:hover .preference-item-hint {
@@ -2415,7 +2418,7 @@ select:hover {
   max-width: none;
   padding: 1.5rem;
   background-color: var(--boxes);
-  border-radius: 0.5rem;
+  border-radius: 0rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 1.5rem;
@@ -2642,6 +2645,10 @@ p[type='description'] {
 
 	.nav-link.depth-6 {
 		padding-left: 110px;
+	}
+
+	img {
+		border-radius: 10px;
 	}
 </style>
 <div id="after_page">
